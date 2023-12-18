@@ -1,0 +1,342 @@
+@charset "UTF-8";
+
+/* ========================================================== 
+                            Resets
+========================================================== */
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+img {
+	display: block;
+	max-width: 100%;
+}
+
+/* ========================================================== 
+                            Fonts
+========================================================== */
+
+@font-face {
+	font-family: "Roboto";
+	src: url("./assets/fonts/Roboto-Regular.ttf");
+}
+
+/* ========================================================== 
+                        Color Variables
+========================================================== */
+
+$base-color: rgb(0, 0, 0);
+$text-color: rgb(255, 255, 255);
+$accent-color: rgb(252, 87, 49);
+
+/* ========================================================== 
+												Body und Wrapper
+========================================================== */
+
+body {
+	font-family: "Roboto";
+	background: $accent-color url("./assets/images/movie_bg.jpg") center / cover
+		no-repeat fixed;
+	scroll-behavior: smooth;
+	padding-block: 6vh;
+	padding-inline: 3%;
+}
+
+.wrapper {
+	max-width: 1440px;
+	margin: 0 auto;
+	background-color: rgba($base-color, 0.8);
+	padding-block: 8vh;
+	padding-inline: 3%;
+	border-radius: 20px;
+}
+
+/* ========================================================== 
+                            Content
+========================================================== */
+
+/* ========================================================== 
+                      Movie Search Section
+========================================================== */
+
+.movie__search__wrapper {
+	max-width: 1200px;
+	background: linear-gradient(to bottom, $base-color 90%, transparent);
+	padding: 5vh 3% 10vh;
+	margin: 0 auto;
+	text-align: center;
+	position: sticky;
+	top: 0;
+	border-radius: 20px;
+	h1 {
+		font-size: 2.5rem;
+		padding-block-end: 20px;
+		color: $text-color;
+		text-transform: uppercase;
+		letter-spacing: 5px;
+	}
+	h2 {
+		font-size: 1.2rem;
+		padding-block-end: 40px;
+		color: $text-color;
+	}
+	form {
+		padding-block-end: 10px;
+		max-width: 540px;
+		margin: 0 auto;
+		div.search {
+			display: flex;
+			justify-content: center;
+			flex-wrap: wrap;
+			gap: 10px;
+			input[type="search"] {
+				font-size: 1rem;
+				min-width: 70%;
+				padding: 15px;
+				border-radius: 50px;
+				border: none;
+				text-align: center;
+			}
+		}
+	}
+	div.filter {
+		padding-block-start: 20px;
+		button[type="button"] {
+			padding: 15px;
+			background: transparent;
+			color: $text-color;
+			font-weight: bold;
+			letter-spacing: 2px;
+			text-transform: uppercase;
+			cursor: pointer;
+			border: 2px solid $accent-color;
+			border-radius: 50px;
+			min-width: 170px;
+			margin: 5px;
+			transition: all 0.3s;
+			position: relative;
+			overflow: hidden;
+			z-index: 1;
+			&:after {
+				content: "";
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				z-index: -2;
+			}
+			&:before {
+				content: "";
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				width: 0%;
+				height: 100%;
+				background-color: $accent-color;
+				transition: all 0.3s;
+				z-index: -1;
+			}
+			&:hover {
+				color: $base-color;
+				&:before {
+					width: 100%;
+				}
+			}
+		}
+	}
+}
+
+/* ========================================================== 
+                      Movies Output Section
+========================================================== */
+
+.movie__output__wrapper {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	width: clamp(150px, 96%, 1100px);
+	margin: 1vh auto 0;
+	color: $base-color;
+	font-weight: 900;
+	background-color: rgba($base-color, 0.3);
+	gap: 15px;
+	padding: 15px;
+	border-radius: 20px;
+	transition: all 1s ease-in-out;
+	box-shadow: 0 0 10px 1px rgba($accent-color, 0.4);
+	.errorOutput {
+		grid-column: 2/4;
+		text-align: center;
+		font-size: 1.1rem;
+		border-radius: 5px;
+		padding: 0 20px;
+		border: 1px solid $accent-color;
+		border-radius: 20px;
+		background-color: rgba($base-color, 0.75);
+		p {
+			color: $accent-color;
+			font-size: 5rem;
+			padding-block-end: 10px;
+			font-weight: 400;
+		}
+		h3 {
+			color: $text-color;
+			padding-block-end: 20px;
+		}
+	}
+	.article__movie {
+		background: linear-gradient(
+			135deg,
+			rgba($base-color, 0.5) 90%,
+			rgba($accent-color, 0.5) 10%
+		);
+		padding: 0 0 15px;
+		border-radius: 15px;
+		font-size: 1.1rem;
+		text-align: center;
+		transition: all 1s ease-in-out;
+		color: rgba($text-color, 0.75);
+		h3 {
+			font-size: 1.2rem;
+			padding: 15px 10px;
+			background-color: rgba($text-color, 0.75);
+			width: 100%;
+			border-top-left-radius: 15px;
+			border-top-right-radius: 15px;
+			min-height: 80px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			color: $base-color;
+			margin-bottom: 20px;
+			border-bottom: 4px solid $accent-color;
+		}
+		p {
+			font-size: 0.9rem;
+			line-height: 1.2rem;
+			margin-bottom: 10px;
+			padding-inline: 10px;
+			&:nth-of-type(1),
+			&:nth-of-type(2) {
+				padding-block-end: 10px;
+			}
+			&:nth-of-type(2) {
+				font-size: 1.1rem;
+			}
+			span {
+				color: rgba($accent-color, 0.9);
+				font-weight: 400;
+				text-transform: uppercase;
+				font-size: 0.75rem;
+			}
+		}
+	}
+}
+
+/* ========================================================== 
+                      Button Scroll to Top
+========================================================== */
+
+.button__scroll__to__top {
+	width: 55px;
+	height: 55px;
+	background: rgba($base-color, 0.6);
+	border: 4px solid rgba($accent-color, 0.9);
+	border-radius: 50%;
+	text-align: center;
+	position: fixed;
+	z-index: 9999;
+	bottom: 1.9%;
+	right: 1%;
+	cursor: pointer;
+	transition: all 0.5s ease-in-out;
+}
+
+.button__scroll__to__top:hover {
+	background: rgba($base-color, 0.9);
+	box-shadow: 0 0 5px 5px rgba($base-color, 0.5);
+}
+
+.button__scroll__to__top:before {
+	font-size: 1.5rem;
+	content: '▲';
+	color: rgba($accent-color, 0.5);
+	transition: all 0.5s ease-in-out;
+}
+
+.button__scroll__to__top:hover::before {
+	color: rgba($accent-color, 0.9);
+}
+
+/* ========================================================== 
+                        Media Queries
+========================================================== */
+
+
+@media screen and (min-width: 768px) and (max-width: 1023px){
+	.movie__output__wrapper {
+		grid-template-columns: repeat(3, 1fr);
+		.errorOutput {
+			grid-column: 2/3;
+		}
+	}
+}
+
+@media screen and (min-width: 480px) and (max-width: 767px) {
+	body {
+		padding-block: 3vh;
+	}
+	.wrapper {
+		padding-block: 3vh;
+	}
+	.movie__output__wrapper {
+		grid-template-columns: repeat(2, 1fr);
+		.errorOutput {
+			grid-column: 1/3;
+		}
+	}
+}
+
+@media screen and (max-width: 480px) {
+	body {
+		padding-block: 2vh;
+	}
+	.wrapper {
+		padding-block: 2vh;
+	}
+	.movie__search__wrapper {
+		position: static;
+		h1 {
+			font-size: 1.7rem;
+		}
+		form {
+			div.search {
+				input[type="search"] {
+					font-size: 0.9rem;
+					min-width: 90%;
+					padding: 10px;
+				}
+			}
+		}
+		div.filter {
+			padding-block-start: 10px;
+			button[type="button"] {
+				padding: 10px 15px;
+			}
+	}
+}
+	.movie__output__wrapper {
+		grid-template-columns: 1fr;
+		.errorOutput {
+			grid-column: 1;
+		}
+	}
+}
