@@ -1,7 +1,7 @@
 import { useEffect, useState, useMemo } from "react";
 import movieData from "../data/movieData.json";
 import MovieList from "./MovieList";
-import ButtonToTop from "./ButtonToTop";
+
 
 const Content = () => {
 	const [movie, setMovie] = useState(movieData);
@@ -107,7 +107,6 @@ const Content = () => {
 			</header>
 			<main>
 				<MovieList allMovies={movie} searchInput={searchInput} />
-				<ButtonToTop />
 			</main>
 		</>
 	);
