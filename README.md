@@ -27,7 +27,7 @@ Dieses REACT-Projekt wurde im Rahmen eines Coding-Bootcamps bei supercode.de ers
 ### Ansicht der Webseite
 ![Ansicht der Webseite](./public/screenshot_movie_db.jpg)
 
-## GitHub Live Vorschau
+## Netlify Live Vorschau
 
 Du findest eine Live Vorschau auf Netlify: [Netlify Live Vorschau](https://reactjs-movie-db-rainer-busch.netlify.app/)
 
