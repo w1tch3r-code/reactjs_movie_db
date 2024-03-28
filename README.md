@@ -18,6 +18,7 @@ Dieses REACT-Projekt wurde im Rahmen eines Coding-Bootcamps bei supercode.de ers
 5. Die sortierten Filme werden wieder entsprechend ausgegeben.
 
 ## Tools/Technologien
+
 - HTML5
 - SCSS
 - REACT
@@ -25,6 +26,7 @@ Dieses REACT-Projekt wurde im Rahmen eines Coding-Bootcamps bei supercode.de ers
 ## Screenshot
 
 ### Ansicht der Webseite
+
 ![Ansicht der Webseite](./public/screenshot_movie_db.jpg)
 
 ## Netlify Live Vorschau
@@ -36,6 +38,7 @@ Du findest eine Live Vorschau auf Netlify: [Netlify Live Vorschau](https://react
 Du findest das gesamte Projekt auf GitHub: [GitHub Repository](https://github.com/w1tch3r-code/reactjs_movie_db)
 
 ## To Do's
+
 - Weitere Funktionalitäten hinzufügen (Filme hinzufügen, bearbeiten, löschen)
 
 ## Anmerkungen
