@@ -4,7 +4,7 @@
 
 Dieses REACT-Projekt wurde im Rahmen eines Coding-Bootcamps bei supercode.de erstellt. Es handelt sich um eine Movie Datenbank, bei der die Filme aus einer JSON-Datei beim Laden der Seite angezeigt werden.
 
-### Die Anwendung bietet folgende Möglichkeiten:
+### Die Anwendung bietet folgende Möglichkeiten
 
 - Suche nach einem bestimmten Film
 - Sortierung der Datenbank nach Erscheinungsjahr (aufsteigend/absteigen), nach der Bewertung (absteigend) und alphabetisch von A nach Z und von Z nach A.
@@ -12,7 +12,7 @@ Dieses REACT-Projekt wurde im Rahmen eines Coding-Bootcamps bei supercode.de ers
 ## Funktionsweise
 
 1. Filmnamen oder einen Teil davon in das Suchefeld eingeben
-2. Filme, die dem Suchstring entsprechen, werden direkt angezeigt 
+2. Filme, die dem Suchstring entsprechen, werden direkt angezeigt
 3. Werden keine Filme gefunden erscheint eine Error-Meldung
 4. Zur Sortierung der Filme auf den entsprechenden Button "Sort by Year Up", "Sort by Year Down", "Best Rate", A-Z oder Z-A klicken.
 5. Die sortierten Filme werden wieder entsprechend ausgegeben.
